@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-zinc-100 dark:bg-zinc-900">
+  <div class="bg-white dark:bg-zinc-800 p-6 rounded-lg shadow-lg w-full max-w-md">
+    <div class="flex justify-center mb-6">
+        <h1 class="text-red-600 text-4xl font-bold">Encryptions</h1>
+    </div>
+    <h2 class="text-2xl text-white font-bold text-center mb-2">Create a new account</h2>
+    <p class="text-center text-zinc-600 dark:text-zinc-400 mb-6"> </p>
+    <form>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <input type="text" placeholder="First name" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+        <input type="text" placeholder="Last name" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
+        <input type="text" placeholder="Mobile number or email" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
+        <input type="password" placeholder="New password" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Birthday</label>
+        <input type="date" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Gender</label>
+        <div class="text-white grid grid-cols-3 gap-4">
+          <label class="flex items-center">
+            <input type="radio" name="gender" class="mr-2">
+            Female
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="gender" class="mr-2">
+            Male
+          </label>
+          <label class="flex items-center">
+            <input type="radio" name="gender" class="mr-2">
+            Custom
+          </label>
+        </div>
+      </div>
+      <div class="flex justify-center mb-4">
+        <button class="bg-red-500 text-white p-2 rounded-lg w-full">Sign Up</button>
+      </div>
+      <div class="text-center">
+        <a href="login.html" class="text-red-500">Already have an account?</a>
+      </div>
+    </form>
+  </div>
+</div>
+  </body>
+</html>
+
+
+
+
+
+
+
+

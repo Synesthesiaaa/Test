@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-zinc-100 dark:bg-zinc-800">
+    <h1 class="text-3xl font-bold text-center text-zinc-900 dark:text-zinc-100 mb-4">Time Tracker</h1>
+    <div class="w-full max-w-md bg-white dark:bg-zinc-700 shadow-md rounded-lg p-6">
+        <input type="text" id="name" class="w-full px-3 py-2 mb-3 border border-zinc-300 dark:border-zinc-600 rounded-md" placeholder="Enter your name">
+        <button id="timeInBtn" class="w-full bg-blue-500 text-white py-2 rounded-md mb-3">Time In</button>
+        <button id="timeOutBtn" class="w-full bg-red-500 text-white py-2 rounded-md">Time Out</button>
+        <p id="loadingText" class="hidden text-center text-zinc-500 dark:text-zinc-400">Time In...</p>
+        <p id="successText" class="hidden text-center text-green-500 dark:text-green-400">Data successfully recorded!</p>
+    </div>
+</div>
+<script>
+    const timeInBtn = document.getElementById('timeInBtn');
+    const timeOutBtn = document.getElementById('timeOutBtn');
+    const nameInput = document.getElementById('name');
+    const loadingText = document.getElementById('loadingText');
+    const successText = document.getElementById('successText');
+
+    timeInBtn.addEventListener('click', () => {
+        loadingText.classList.remove('hidden');
+        const currentTime = new Date().toLocaleString();
+        const data = `${nameInput.value},Time In,${currentTime}\n`;
+        saveToCSV(data);
+    });
+
+    timeOutBtn.addEventListener('click', () => {
+        loadingText.classList.remove('hidden');
+        const currentTime = new Date().toLocaleString();
+        const data = `${nameInput.value},Time Out,${currentTime}\n`;
+        saveToCSV(data);
+    });
+
+    function saveToCSV(data) {
+        const blob = new Blob([data], { type: 'text/csv' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'time_tracker.csv';
+        a.click();
+        URL.revokeObjectURL(url);
+        loadingText.classList.add('hidden');
+        successText.classList.remove('hidden');
+        setTimeout(() => {
+            successText.classList.add('hidden');
+        }, 3000);
+    }
+</script>
+  </body>
+</html>
