@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-zinc-100 dark:bg-zinc-900">
+  <div class="bg-white dark:bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <div class="flex justify-center mb-6">
+        <h1 class="text-pink-600 text-4xl font-bold text-center">CiD PJLI Sales Tracker</h1>
+    </div>
+    <h2 class="text-center text-zinc-700 dark:text-zinc-300 mb-4">Please fill out with all required details. For strict compliance.</h2>
+    <form>
+      <div class="mb-4">
+        <input type="text" placeholder="Agent Name (Full Name)" name="agent" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input type="text" placeholder="Contact Number" name="cno" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input type="text" placeholder="Cebuana Contact Number" name="ccno" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input type="text" placeholder="Customer Name" name="custname" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="text-center text-zinc-700 dark:text-zinc-300 mb-4" >Result:</label>
+        <select name="result" placeholder="Result" id="result" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+          <option value="result">Choose a Result</option>
+          <option value="Endorsed">Endorsed</option>
+          <option value="Declined">Declined</option>
+          <option value="Call Back - Undecided">Call Back - Undecided</option>
+          <option value="Unavailable">Unavailable</option>
+          <option value="Wrong Number">Wrong Number</option>
+          <option value="No plans to renew">No plans to renew</option>
+          <option value="No need for pawning service">No need for pawning service</option>
+          <option value="Agreed to renew">Agreed to renew</option>
+          <option value="Agreed to do pawn transaction">Agreed to do pawn transaction</option>
+          <option value="Call Back - Client Busy">Call Back - Client Busy</option>
+          <option value="Already pinkeemed">Already pinkeemed</option>
+          <option value="Already Renewed">Already Renewed</option>
+          <option value="Decline DPA consent">Decline DPA consent</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="text-center text-zinc-700 dark:text-zinc-300 mb-4" >Reason to Decline:</label>
+        <select name="Reason to Decline" id="r2d" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+          <option value="result">Choose a Reason</option>
+          <option value="No driver's license.">No driver's license.</option>
+          <option value="No OFW in the family.">No OFW in the family.</option>
+          <option value="No source of income">No source of income</option>
+          <option value="Salary income insufficient">Salary income insufficient</option>
+          <option value="No plans of getting a new motorcycle">No plans of getting a new motorcycle</option>
+          <option value="No need for cash">No need for cash</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="text-center text-zinc-700 dark:text-zinc-300 mb-4" >Campaign:</label>
+        <select name="Campaign" id="campaign" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+          <option value="result">Choose a Campaign</option>
+          <option value="OFW">OFW</option>
+          <option value="CYCLE">CYCLE</option>
+          <option value="WINBACK">WINBACK</option>
+          <option value="RENEWAL">RENEWAL</option>
+          <option value="FMT">FMT</option>
+          <option value="No need for cash">No need for cash</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <input type="text" placeholder="Remarks" name="Remarks" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+
+      <div class="mb-4">
+        <button type="submit" name="submit" class="w-full bg-pink-600 text-white p-3 rounded-lg">Submit</button>
+      </div>
+    </form>
+    <div class="text-center">
+      <a href="#" class="text-pink-600 dark:text-pink-600">Forgot account?</a>
+      <span class="text-zinc-600 dark:text-zinc-400 mx-2">·</span>
+      <a href="signup.html" class="text-pink-600 dark:text-pink-600">Sign up now</a>
+    </div>
+  </div>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyEJmA3XokGxD1ORADtUZ_7RkEXK4GPrXWFky_fVu0l1tOsVnvpDXYM9i1sB_7Bqr5yOQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const success = document.getElementById('success');
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+  </body>
+</html> 
