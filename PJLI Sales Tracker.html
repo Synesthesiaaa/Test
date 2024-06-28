@@ -13,6 +13,12 @@
     <h2 class="text-center text-zinc-700 dark:text-zinc-300 mb-4">Please fill out with all required details. For strict compliance.</h2>
     <form name="submit-to-google-sheet">
       <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Date</label>
+        <input name="Date" type="date" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Time</label>
+        <input name="Time" type="time" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
         <input type="text" placeholder="Agent Name (Full Name)" name="Agent" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
       </div>
       <div class="mb-4">
@@ -25,7 +31,7 @@
         <input type="text" placeholder="Customer Name" name="Customer Name" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
       </div>
       <div class="mb-4">
-        <label class="text-center text-zinc-700 dark:text-zinc-300 mb-4" >Result:</label>
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Result</label>
         <select name="Result" placeholder="Result" id="result" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
           <option value="result">Choose a Result</option>
           <option value="Endorsed">Endorsed</option>
@@ -44,7 +50,7 @@
         </select>
       </div>
       <div class="mb-4">
-        <label class="text-center text-zinc-700 dark:text-zinc-300 mb-4" >Reason to Decline:</label>
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Reason to Decline</label>
         <select name="Reason to Decline" id="r2d" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
           <option value="result">Choose a Reason</option>
           <option value="No driver's license.">No driver's license.</option>
@@ -56,7 +62,7 @@
         </select>
       </div>
       <div class="mb-4">
-        <label class="text-center text-zinc-700 dark:text-zinc-300 mb-4" >Campaign:</label>
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Campaign</label>
         <select name="Campaign" id="campaign" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
           <option value="result">Choose a Campaign</option>
           <option value="OFW">OFW</option>
@@ -78,19 +84,19 @@
       
     </form>
     <div class="text-center">
-      <a href="#" class="text-pink-600 dark:text-pink-600">Forgot account?</a>
+      <a href="http://cidglobal.co/" class="text-pink-600 dark:text-pink-600">CiD Global Solutions Inc.</a>
       <span class="text-zinc-600 dark:text-zinc-400 mx-2">·</span>
-      <a href="signup.html" class="text-pink-600 dark:text-pink-600">Sign up now</a>
+      <a href="https://cv.encryptions.cloud/" class="text-pink-600 dark:text-pink-600">Encryptions</a>
     </div>
   </div>
 </div>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxamJG_wUzlQ7AYBT-NoUHujQqSnZAQmZANLJ4y6w6cGrKdA0sTJ3R5TF_4F5qhJAfUkQ/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbz4KSILXEXhDO9Jc_BXuxTmtdOWbV30beHLJMOz774bE9MjQy6mTvn_uLUWeaxvZA3U/exec'
   const form = document.forms['submit-to-google-sheet']
   const success = document.getElementById('success');
   form.addEventListener('submit', e => {
     e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)}) 
       .then(response => {
         success.innerHTML="Submit Successfully!";
 
