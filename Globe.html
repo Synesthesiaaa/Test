@@ -21,7 +21,8 @@
       <div class="mb-4">
         <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Agent Name</label>
         <select required name="Agent" placeholder="Agent" id="Agent" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
-            <option value="Cristina Ditalo">Cristina Ditalo</option>
+            <option value="Please Select" selected disabled hidden>Please Select</option>
+			<option value="Cristina Ditalo">Cristina Ditalo</option>
             <option value="Erika Doringo">Erika Doringo</option>
             <option value="Julie Nova">Julie Nova</option>
             <option value="Mark Gil Torrecampo">Mark Gil Torrecampo</option>
@@ -111,7 +112,7 @@
   </div>
 </div>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwm9tXEAaW7U4Kb0aYTmZXatBjb_-1300BUzNRDdYspajS9PBawF2dIDayRxIfVPzwTWA/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxtthtovQ1bJeULd1R39Tg7mFVqBYx_smLzpJe7vxmHz47q-FqqxMQmPtyAHdqmwZpizA/exec'
   const form = document.forms['submit-to-google-sheet']
   const success = document.getElementById('success');
   form.addEventListener('submit', e => {

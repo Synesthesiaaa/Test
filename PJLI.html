@@ -66,7 +66,7 @@
       </div>
       <div class="mb-4">
         <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Reason to Decline</label>
-        <select required name="Reason to Decline" id="r2d" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+        <select required name="Reason to Decline" id="Reason to Decline" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
           <option value="Please Select" selected disabled hidden>Please Select</option>
           <option value="No driver's license.">No driver's license.</option>
           <option value="No OFW in the family.">No OFW in the family.</option>
@@ -106,7 +106,7 @@
   </div>
 </div>
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbzhhUu8kXR2kixr6lLs1aAihXJZrdca5d_B91BnZiRgXEbJ7yyuNKG5d9gJYXJdLpE6/exec'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyeH3vOfNsumk7sC5XwsMdnmKExRNDRodjte2Zkifzyv1HMyv5ayB687cQzGdyRXtrn/exec'
   const form = document.forms['submit-to-google-sheet']
   const success = document.getElementById('success');
   form.addEventListener('submit', e => {
