@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-zinc-100 dark:bg-zinc-900">
+  <div class="bg-white dark:bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <div class="flex justify-center mb-6">
+        <h1 class="text-pink-600 text-4xl font-bold text-center">Requests</h1>
+    </div>
+    <h2 class="text-center text-zinc-700 dark:text-zinc-300 mb-4">Globe Campaign</h2>
+    <form name="submit-to-google-sheet">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Timestamp</label>
+        <input required name="Timestamp" type="datetime-local" id="Date" readonly class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">PTP Date</label>
+        <input required name="PTP Date" type="Date" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Agent Name</label>
+        <select required name="Agent" placeholder="Agent" id="Agent" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+            <option value="Please Select" selected disabled hidden>Please Select</option>
+            <option value="Aaron Sison">Aaron Sison</option>
+            <option value="Angelica Lacida">Angelica Lacida</option>
+            <option value="Ava Donna Rivas">Ava Donna Rivas</option>
+            <option value="Charlie Ativo">Charlie Ativo</option>
+            <option value="Cheryl Lopez">Cheryl Lopez</option>
+            <option value="Cheska Dela Cruz">Cheska Dela Cruz</option>
+            <option value="Chrishelle Quijano">Chrishelle Quijano</option>
+            <option value="Cristina Ditalo">Cristina Ditalo</option>
+            <option value="Darcy Aumentado">Darcy Aumentado</option>
+            <option value="Dickymar Baris">Dickymar Baris</option>
+            <option value="Erika Doringo">Erika Doringo</option>
+            <option value="Gina Oliquiano">Gina Oliquiano</option>
+            <option value="Glen Guzon">Glen Guzon</option>
+            <option value="Harry J. Escubio">Harry J. Escubio</option>
+            <option value="Jayrom Halili">Jayrom Halili</option>
+            <option value="Jerico Gerona">Jerico Gerona</option>
+            <option value="John Mart Dela Cruz">John Mart Dela Cruz</option>
+            <option value="Julie Anne Orbiso">Julie Anne Orbiso</option>
+            <option value="Julie Anne Tornea">Julie Anne Tornea</option>
+            <option value="Julie Nova">Julie Nova</option>
+            <option value="Jovelyn M. Constantino">Jovelyn M. Constantino</option>
+            <option value="Laura Jean Sedurifa">Laura Jean Sedurifa</option>
+            <option value="Liwanag P. Gulles">Liwanag P. Gulles</option>
+            <option value="Maria Imelda M. Jacobo">Maria Imelda M. Jacobo</option>
+            <option value="Mark Felix">Mark Felix</option>
+            <option value="Mark Gil Torrecampo">Mark Gil Torrecampo</option>
+            <option value="Marlene Mae Verano">Marlene Mae Verano</option>
+            <option value="Mary chie E. Razol">Mary chie E. Razol</option>
+            <option value="Mauritius Louis Dela Cruz Laurio">Mauritius Louis Dela Cruz Laurio</option>
+            <option value="Mike Somera">Mike Somera</option>
+            <option value="Myla M. Labao">Myla M. Labao</option>
+            <option value="Mylene Erfe">Mylene Erfe</option>
+            <option value="Olvie G. Gruta">Olvie G. Gruta</option>
+            <option value="Pricel Mae D. Cuerpo">Pricel Mae D. Cuerpo</option>
+            <option value="Raquel C. Villanueva">Raquel C. Villanueva</option>
+            <option value="Rensy Ibatuan">Rensy Ibatuan</option>
+            <option value="Reynald Pancho">Reynald Pancho</option>
+            <option value="Ronelyn Alberio">Ronelyn Alberio</option>
+            <option value="Shennel Madio">Shennel Madio</option>
+            <option value="Stephanie Pilapil">Stephanie Pilapil</option>
+            <option value="Wherelyn Nitural">Wherelyn Nitural</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Account Name" name="Account Name" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Account Number" name="Account Number" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Balance" name="Balance" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Discount Amount to Pay" name="Discount Amount to Pay" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Date of Payment</label>
+        <input required name="Date of Payment" type="date" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Email Address" name="Email Address" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Level</label>
+        <select required name="Level" id="Level" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+            <option value="Please Select" selected disabled hidden>Please Select</option>
+            <option value="B2B">B2B</option>
+            <option value="MT POST">MT POST</option>
+            <option value="MT PRE">MT PRE</option>
+            <option value="BB POST">BB POST</option>
+            <option value="GPON POST">GPON POST</option>
+            <option value="GPON PRE">GPON PRE</option>
+            <option value="WO MOB">WO MOB</option>
+            <option value="WO BSS">WO BSS</option>
+            <option value="WO ICCBS">WO ICCBS</option>
+            </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Type of Request</label>
+        <select required name="Type of Request" id="Type of Request" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+            <option value="Please Select" selected disabled hidden>Please Select</option>
+            <option value="SOA">SOA</option>
+            <option value="COC">COC</option>
+            <option value="FOR ADJUSTMENT">FOR ADJUSTMENT</option>
+            <option value="EMAIL REQUEST">EMAIL REQUEST</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <button type="submit" name="submit" class="w-full bg-pink-600 text-white p-3 rounded-lg">Submit</button>
+        <h3 id="success" class="text-center text-zinc-700 dark:text-zinc-300 mb-4"></h3>
+      </div>
+      
+    </form>
+    <div class="text-center">
+      <a href="http://cidglobal.co/" class="text-pink-600 dark:text-pink-600">CiD Global Solutions Inc.</a>
+      <span class="text-zinc-600 dark:text-zinc-400 mx-2">·</span>
+      <a href="https://cv.encryptions.cloud/" class="text-pink-600 dark:text-pink-600">Encryptions</a>
+    </div>
+  </div>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxNTfDt_RtqIbuC7f_mWkL_8EqYqUidOhA7gEdV09hmWN6twkQQ4QOZGPQb-Pq50OjL/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const success = document.getElementById('success');
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        success.innerHTML="Thank You!";
+
+        setTimeout(function()
+        {
+          location.reload(true);
+          success.innerHTML="";
+        },2000)
+        form.reset();
+        })
+      .catch(error => console.error('Error!', error.message))
+  })
+
+var now = new Date();
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+document.getElementById('Date').value = now.toISOString().slice(0,16);
+</script>
+  </body>
+</html> 

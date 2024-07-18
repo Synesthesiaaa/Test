@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-zinc-100 dark:bg-zinc-900">
+  <div class="bg-white dark:bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <div class="flex justify-center mb-6">
+        <h1 class="text-pink-600 text-4xl font-bold text-center">Sales Tracker</h1>
+    </div>
+    <h2 class="text-center text-zinc-700 dark:text-zinc-300 mb-4">PJLI Campaign</h2>
+    <form name="submit-to-google-sheet">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Timestamp</label>
+        <input required name="Timestamp" type="datetime-local" id="Date" readonly class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Date</label>
+        <input required name="Date" type="Date" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Agent Name</label>
+        <select required name="Agent" placeholder="Agent" id="Agent" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+          <option value="Please Select" selected disabled hidden>Please Select</option>
+          <option value="Cesille Izar">Cesille Izar</option>
+          <option value="Michelle Javier">Michelle Javier</option>
+          <option value="Leandra Ricarte">Leandra Ricarte</option>
+          <option value="Jun Oliver Valdoz">Jun Oliver Valdoz</option>
+          <option value="Camilan Antiquia">Camilan Antiquia</option>
+          <option value="Anne Paula Dela Cruz">Anne Paula Dela Cruz</option>
+          <option value="Darwin Geradilla">Darwin Geradilla</option>
+          <option value="Mathew Angelo Bainco">Mathew Angelo Bainco</option>
+          <option value="CJ Matino Ramirez">CJ Matino Ramirez</option>
+          <option value="Nicole Chester Zara">Nicole Chester Zara</option>
+          <option value="May Barcelona">May Barcelona</option>
+          <option value="Princess Cruz">Princess Cruz</option>
+          <option value="Reffrey Duque">Reffrey Duque</option>
+          <option value="Imelda Hernandez">Imelda Hernandez</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Contact Number" name="Contact Number" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Cebuana Contact Number" name="Cebuana Contact Number" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Customer Name" name="Customer Name" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Result</label>
+        <select required name="Result" placeholder="Result" id="result" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+          <option value="Please Select" selected disabled hidden>Please Select</option>
+          <option value="Endorsed">Endorsed</option>
+          <option value="Declined">Declined</option>
+          <option value="Call Back - Undecided">Call Back - Undecided</option>
+          <option value="Unavailable">Unavailable</option>
+          <option value="Wrong Number">Wrong Number</option>
+          <option value="No plans to renew">No plans to renew</option>
+          <option value="No need for pawning service">No need for pawning service</option>
+          <option value="Agreed to renew">Agreed to renew</option>
+          <option value="Agreed to do pawn transaction">Agreed to do pawn transaction</option>
+          <option value="Call Back - Client Busy">Call Back - Client Busy</option>
+          <option value="Already pinkeemed">Already pinkeemed</option>
+          <option value="Already Renewed">Already Renewed</option>
+          <option value="Decline DPA consent">Decline DPA consent</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Reason to Decline</label>
+        <select required name="Reason to Decline" id="Reason to Decline" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+          <option value="Please Select" selected disabled hidden>Please Select</option>
+          <option value="No driver's license.">No driver's license.</option>
+          <option value="No OFW in the family.">No OFW in the family.</option>
+          <option value="No source of income">No source of income</option>
+          <option value="Salary income insufficient">Salary income insufficient</option>
+          <option value="No plans of getting a new motorcycle">No plans of getting a new motorcycle</option>
+          <option value="No need for cash">No need for cash</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Campaign</label>
+        <select required name="Campaign" id="Campaign" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+          <option value="Please Select" selected disabled hidden>Please Select</option>
+          <option value="OFW">OFW</option>
+          <option value="CYCLE">CYCLE</option>
+          <option value="WINBACK">WINBACK</option>
+          <option value="RENEWAL">RENEWAL</option>
+          <option value="FMT">FMT</option>
+          <option value="No need for cash">No need for cash</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <input required type="text" placeholder="Remarks" name="Remarks" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+
+      <div class="mb-4">
+        <button type="submit" name="submit" class="w-full bg-pink-600 text-white p-3 rounded-lg">Submit</button>
+        <h3 id="success" class="text-center text-zinc-700 dark:text-zinc-300 mb-4"></h3>
+      </div>
+      
+    </form>
+    <div class="text-center">
+      <a href="http://cidglobal.co/" class="text-pink-600 dark:text-pink-600">CiD Global Solutions Inc.</a>
+      <span class="text-zinc-600 dark:text-zinc-400 mx-2">·</span>
+      <a href="https://cv.encryptions.cloud/" class="text-pink-600 dark:text-pink-600">Encryptions</a>
+    </div>
+  </div>
+</div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby9KEf7du8o9aP21YGjsbFyN4GSljHJsW6OCmjKs1XEt_71K4WVxbIFxs0Kl5Y0vCqx/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const success = document.getElementById('success');
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)}) 
+      .then(response => {
+        success.innerHTML="Submit Successfully!";
+
+        setTimeout(function() 
+        {
+           location.reload(true);
+          success.innerHTML="";
+        },2000)
+        form.reset();
+        })
+        
+      .catch(error => console.error('Error!', error.message))
+  })
+
+var now = new Date();
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+document.getElementById('Date').value = now.toISOString().slice(0,16);
+
+  
+</script>
+  </body>
+</html> 
