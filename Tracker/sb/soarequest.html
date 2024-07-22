@@ -8,7 +8,7 @@
     <div class="flex items-center justify-center min-h-screen bg-zinc-100 dark:bg-zinc-900">
   <div class="bg-white dark:bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
     <div class="flex justify-center mb-6">
-        <h1 class="text-pink-600 text-4xl font-bold text-center">Confirmed Payment</h1>
+        <h1 class="text-pink-600 text-4xl font-bold text-center">SOA Request</h1>
     </div>
     <h2 class="text-center text-zinc-700 dark:text-zinc-300 mb-4">Security Bank Campaign</h2>
     <form name="submit-to-google-sheet">
@@ -41,19 +41,8 @@
         <input required type="text" placeholder="Account Number" name="Account Number" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
       </div>
       <div class="mb-4">
-        <input required type="text" placeholder="Payment Amount" name="Amount Paid" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+        <input required type="text" placeholder="Contact Number" name="Contact Number" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
       </div>
-      <div class="mb-4">
-        <input required type="text" placeholder="Payment Channel" name="Payment Channel" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
-      </div>
-      <div class="mb-4">
-        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Date of Payment</label>
-        <input required name="Date of Payment" type="date" class="border border-zinc-300 dark:border-zinc-700 p-2 rounded-md w-full">
-      </div>
-      <div class="mb-4">
-        <input required type="text" placeholder="Transaction Number" name="Transaction Number" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
-      </div>
-
       <div class="mb-4">
         <button type="submit" name="submit" class="w-full bg-pink-600 text-white p-3 rounded-lg">Submit</button>
         <h3 id="success" class="text-center text-zinc-700 dark:text-zinc-300 mb-4"></h3>
