@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Calculator</title>
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Calculator</h1>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" placeholder="Enter the price">
+        </div>
+        <div class="form-group">
+            <label for="downpayment">Required Downpayment</label>
+            <input type="number" id="downpayment" placeholder="Enter the downpayment">
+        </div>
+        <div class="form-group">
+            <label for="loanableAmount">Loanable Amount</label>
+            <input type="number" id="loanableAmount" readonly>
+        </div>
+        <div class="form-group">
+            <label for="loanTerm">Loan Term (Months)</label>
+            <input type="number" id="loanTerm" placeholder="Enter the loan term">
+        </div>
+        <div class="form-group">
+            <label for="interestRate">Interest Rate (%)</label>
+            <input type="number" step="0.01" id="interestRate" placeholder="Enter the interest rate">
+        </div>
+        <div class="form-group">
+            <label for="monthlyInterest">Monthly Interest</label>
+            <input type="number" id="monthlyInterest" readonly>
+        </div>
+        <div class="form-group">
+            <label for="totalAccruedInterest">Total Accrued Interest</label>
+            <input type="number" id="totalAccruedInterest" readonly>
+        </div>
+        <div class="form-group">
+            <label for="totalWithInterest">Total Amount with Interest</label>
+            <input type="number" id="totalWithInterest" readonly>
+        </div>
+        <div class="form-group">
+            <label for="processingFee">Processing Fee</label>
+            <input type="number" id="processingFee" placeholder="Enter the processing fee">
+        </div>
+        <div class="form-group">
+            <label for="monthlyInstallment">Estimated Monthly Installment</label>
+            <input type="number" id="monthlyInstallment" readonly>
+        </div>
+        <button onclick="calculateLoan()">Calculate</button>
+    </div>
+
+    <script>
+        function calculateLoan() {
+            let price = parseFloat(document.getElementById('price').value);
+            let downpayment = parseFloat(document.getElementById('downpayment').value);
+            let loanTerm = parseInt(document.getElementById('loanTerm').value);
+            let interestRate = parseFloat(document.getElementById('interestRate').value);
+            let processingFee = parseFloat(document.getElementById('processingFee').value);
+
+            let loanableAmount = price - downpayment;
+            document.getElementById('loanableAmount').value = loanableAmount.toFixed(2);
+
+            let monthlyInterestRate = (interestRate / 100) / 12;
+            document.getElementById('monthlyInterest').value = (monthlyInterestRate * 100).toFixed(2);
+
+            let totalAccruedInterest = loanableAmount * monthlyInterestRate * loanTerm;
+            document.getElementById('totalAccruedInterest').value = totalAccruedInterest.toFixed(2);
+
+            let totalWithInterest = loanableAmount + totalAccruedInterest;
+            document.getElementById('totalWithInterest').value = totalWithInterest.toFixed(2);
+
+            let totalLoanWithFee = totalWithInterest + processingFee;
+            let monthlyInstallment = totalLoanWithFee / loanTerm;
+            document.getElementById('monthlyInstallment').value = monthlyInstallment.toFixed(2);
+        }
+    </script>
+</body>
+</html>
