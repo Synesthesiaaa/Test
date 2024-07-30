@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex items-center justify-center min-h-screen bg-zinc-100 dark:bg-zinc-900">
+  <div class="bg-white dark:bg-zinc-800 p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <div class="flex justify-center mb-6">
+        <h1 class="text-pink-600 text-4xl font-bold text-center">Motorcycle Loan Calculator</h1>
+    </div>
+    <h2 class="text-center text-zinc-700 dark:text-zinc-300 mb-4">PJLI Campaign</h2>
+    <form name="submit-to-google-sheet">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Price</label>
+        <input required type="number" id="price" placeholder="Input Price" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Required Downpayment</label>
+        <input required type="number" id="rdp" readonly class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Loanable Amount</label>
+        <input type="number" id="la" readonly class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Loanable Term (Month/s)</label>
+        <input required type="number" id="ltm" placeholder="Input Loanable Term" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+         <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Interest Rate</label>
+        <input type="number" step="0.01" id="ir" class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Monthly Interest</label>
+        <input type="number" id="mi" readonly class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Total Accrued Interest</label>
+        <input type="number" id="tai" readonly class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Total Amount with Interest</label>
+        <input type="number" id="tawi" readonly class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Processing Fee</label>
+        <input type="number" id="pf" readonly class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">Estimated Monthly Installment</label>
+        <input type="number" id="emi" readonly class="w-full p-3 border border-zinc-300 rounded-lg dark:bg-zinc-700 dark:border-zinc-600 dark:text-zinc-300">
+      </div>
+    </form>
+    <button onclick="CalculateLoan()" class="w-full bg-pink-600 text-white p-3 rounded-lg">Calculate</button>
+    <div class="text-center">
+      <a href="http://cidglobal.co/" class="text-pink-600 dark:text-pink-600">CiD Global Solutions Inc.</a>
+      <span class="text-zinc-600 dark:text-zinc-400 mx-2">·</span>
+      <a href="https://cv.encryptions.cloud/" class="text-pink-600 dark:text-pink-600">Encryptions</a>
+    </div>
+  </div>
+</div>
+<script>
+        function CalculateLoan() {
+            let price = parseFloat(document.getElementById('price').value);
+            let ltm = parseInt(document.getElementById('ltm').value);
+            let ir = parseFloat(document.getElementById('ir').value);
+            
+
+            let rdp = (price * 0.15);
+            document.getElementById('rdp').value = rdp.toFixed(2);
+
+            let la = price - rdp;
+            document.getElementById('la').value = la.toFixed(2);
+
+            let mi = (la * ir) / 100;
+            document.getElementById('mi').value = mi.toFixed(2);
+
+            let tai = (mi * ltm); 
+            document.getElementById('tai').value = tai.toFixed(2);
+
+            let tawi = la + tai;
+            document.getElementById('tawi').value = tawi.toFixed(2);
+
+            let pf = (la * 5.75) / 100;
+            document.getElementById('pf').value = pf.toFixed(2);
+
+            let emi = (tawi / ltm);
+            document.getElementById('emi').value = emi.toFixed(2);
+        }
+</script>
+  </body>
+</html>
